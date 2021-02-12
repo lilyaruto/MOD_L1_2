@@ -8,15 +8,17 @@ public class Node {
 	private int[] data = new int[2];
 	private Node stepLeft;
 	private Node stepRight;
+	private boolean checkCorner;
 
-	public Node(int key, int[] data, Node stepLeft, Node stepRight) {
+	public Node(int key, int[] data, Node stepLeft, Node stepRight, boolean checkCorner) {
 		super();
 		this.key = key;
 		this.data = data;
 		this.stepLeft = stepLeft;
 		this.stepRight = stepRight;
+		this.checkCorner = checkCorner;
 	}
-
+	
 	public Node() {
 		super();
 	}
@@ -53,8 +55,16 @@ public class Node {
 		this.stepRight = stepRight;
 	}
 
+	public boolean isCheckCorner() {
+		return checkCorner;
+	}
+
+	public void setCheckCorner(boolean checkCorner) {
+		this.checkCorner = checkCorner;
+	}
+
 	@Override
 	public String toString() {
-		return "Node [key=" + key + ", data=" + Arrays.toString(data) + "]\n";
+		return "Node [key=" + key + ", data=" + Arrays.toString(data) + ", checkCorner=" + checkCorner + "]\n";
 	}
 }
